@@ -1,6 +1,10 @@
 body {
+  width: 80%;
   font-size: 1.2em;
   background: grey;
-  color: peru;
+  color: #e97d12;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20%;
 }
 /*# sourceMappingURL=style.css.map */
