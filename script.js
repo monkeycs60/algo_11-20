@@ -5,6 +5,7 @@ var findDigit = function(num, nth){
     index = (resultat.length - nth);
     console.log(index);
    console.log();
+   console.log();
     
     
     
