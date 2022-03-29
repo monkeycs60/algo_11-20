@@ -1,46 +1,20 @@
-function trouverLaPersonne(data, source) {
-    let varNom = [];
-    let resultat = [];
-for (let index = 0; index < data.length; index++) {
-    
-    if ((source.hasOwnProperty("nom") === data[index].hasOwnProperty("nom"))) {
-       varNom.push(data[index]);
-    }
+function regexTime(str) {
+const result = /[a-zA-Z !]/gm;
+return str.match(result).join('');
 }
 
-for (let j = 0; j < varNom.length; j++) {
-    if ( varNom[j].nom == source.nom) {
-        resultat.push(varNom[j])
-    }
-    
-}
-return resultat;
 
-}
-
-console.log(
-  trouverLaPersonne(
-  [
-    { prenom: "Tom", nom: "Durand" },
-    { prenom: "Juliette", nom: "Garcia" },
-    { prenom: "Jean", nom: "Lafite" },
-    { prenom: "Lucien", nom: "Lafite" },
-    { prenom: "Lucien", abc: "Lafite" }
-  ], 
-    { nom: "Lafite" }
-  ));
+console.log(regexTime('I4l est te-mp///s de %sav/oir u845til85iser 6le re%gex !'));
 
 
 // ----------------- ÉNONCÉ -----------------
 
-// On passe en entrée un tableau d'objet et un objet, vous devez afficher, dans un
-// tableau, les objets qui ont la même propriété("nom") ET la même valeur
-// associée à cette propriété.
-// l'exemple ici devrai retourner : [{prenom: "Jean", nom: "Lafite"}, {prenom: "Lucien", nom: "Lafite"}];
+// Entrainons-nous au Regex !
+// Vous devez créer un algorithme qui reçoit une chaine de caractères et qui va
+// supprimer tous les chiffres, et les caractère (%-/) de cette chaine
+// grace à un regex.
 
+// le resultat est : il est temps de savoir utiliser le regex !
 // ----------------- CONSEILS -----------------
 
-// Object.keys(obj) -> renvoie un tableau avec les propriétés d'un objet.
-// filter(), filtre et retourne un tableau(false, undefined, null sont filtrés d'un tableau).
-// obj.hasOwnProperty() -> vérifie si un objet possede une propriete, retourne
-// true ou false;
+// Le regex permet de selectionner facilement certains caractère
