@@ -1,19 +1,24 @@
-function regexTime(str) {
-const result = /[a-zA-Z !]/gm;
-return str.match(result).join('');
+function fonctionParam(arr, func) {
+  let tab = [];
+let tri = arr.sort();
+for (let index = 0; index < tri.length; index++) {
+ if (func(tri[index]) === true) {
+   tab.push(tri[index]);
+ } 
+}
+return tab;
 }
 
-console.log(regexTime('I4l est te-mp///s de %sav/oir u845til85iser 6le re%gex !'));
+console.log(fonctionParam([1, 7, 2, 3, 90, 4, 5, 1, 2, 3], function(n) {return n >= 3;}));
 
 
 // ----------------- ÉNONCÉ -----------------
 
-// Entrainons-nous au Regex !
-// Vous devez créer un algorithme qui reçoit une chaine de caractères et qui va
-// supprimer tous les chiffres, et les caractère (%-/) de cette chaine
-// grace à un regex.
-
-// le resultat est : il est temps de savoir utiliser le regex !
+// Cette fonction reçoit deux paramètres, un tableau et une fonction.
+// Triez le premier paramètre(arr).
+// Puis retournez un nouveau tableau après avoir utilisé la fonction (second param)
+// avec chacun des éléments du premier tableau.
 // ----------------- CONSEILS -----------------
 
-// Le regex permet de selectionner facilement certains caractère
+// shift();
+// Boucle for;
