@@ -1,43 +1,48 @@
-var findDigit = function(num, nth){
-    
-    
-    let resultat = Array.from(String(num), num => Number(num));
-    index = (resultat.length - nth);
-    console.log(index);
-  
-    
-    
-    
-   
-        if (num == 0) {
-            return 0;
-
-        }
-        else if (nth <= 0) {
-return -1;
-        }
-        else if( index <= -0.5 ) {
-            return 0;  
-        }
-        else if (index <= -1) {
-            return -1;
-        }
-    else {
+function difTab(arr1, arr2) {
+    let tabResult = [];
+for (let index = 0; index < arr1.length; index++) {
+    // console.log(arr1.indexOf(arr2[index]));
+    console.log(arr2.indexOf(arr1[index]));
+    if (arr1.indexOf(arr2[index]) == -1) {
+        tabResult.push(arr2[index]);
+       
         
-        let finalResult = resultat[index]
-        return finalResult;
     }
-    
-   
+    if (arr2.indexOf(arr1[index]) == -1) {
+        tabResult.push(arr1[index]);
+       
+       
+    }  
+    }
+    const lastResult = tabResult.filter(el => el !== undefined)
+    return lastResult;
 }
 
-console.log(findDigit(5673, 4));
+    
 
 
-// 5673, 4 --> 5
-// 129, 2 --> 2
-// -2825, 3 --> 8
-// -456, 4 --> 0
-// 0, 20 --> 0
-// 65, 0 --> -1
-// 24, -8 --> -1
+
+
+
+console.log(difTab([1, 2, 3, 5, 7, 6, 4, 9], [1, 2, 6, 7, 8, 3, 4, 5]));
+
+// console.log(difTab([1, 2], [1, 3, 2]));
+
+// const thirdTab = arr1.concat(arr2);
+// console.log(thirdTab);
+
+// ----------------- ÉNONCÉ -----------------
+//             (9) [1, 2, 3, 5, 1, 2, 3, 4, 5]
+
+// Vous devez créer un algorithme qui retourne les différences entre deux tableaux.
+// Il prends deux tableaux en arguments et retourne un tableau contenant les différences.
+
+// ----------------- CONSEILS -----------------
+
+// Il est possible de créer une fonction dans une fonction.
+// indexOf()
+// push();
+//
+// Ou alors...
+// concat();
+// filter();
