@@ -1,24 +1,54 @@
-function fonctionParam(arr, func) {
-  let tab = [];
-let tri = arr.sort();
-for (let index = 0; index < tri.length; index++) {
- if (func(tri[index]) === true) {
-   tab.push(tri[index]);
- } 
+function repete(str, num) {
+  let result = [];
+for (let index = 0; index < num; index++) {
+  result.push(str)
 }
-return tab;
+let final = result.join("").toString();
+console.log(final);
+  
 }
-
-console.log(fonctionParam([1, 7, 2, 3, 90, 4, 5, 1, 2, 3], function(n) {return n >= 3;}));
-
+console.log(repete('abc', 4));
 
 // ----------------- ÉNONCÉ -----------------
 
-// Cette fonction reçoit deux paramètres, un tableau et une fonction.
-// Triez le premier paramètre(arr).
-// Puis retournez un nouveau tableau après avoir utilisé la fonction (second param)
-// avec chacun des éléments du premier tableau.
+// Repetez la chaine(premier parametre) un certain nombre de fois(second parametre).
+// Cette algorithme est relativement facile, c'est pourquoi je vais vous demander de
+// trouver au moins trois façon différentes de le réaliser.
+// Trouver différentes solutions à un algorithme est un bon moyen de progresser.
+
+
 // ----------------- CONSEILS -----------------
 
-// shift();
-// Boucle for;
+// Recursion.
+// opérateur ternaire.
+// While;
+
+
+// Avec boucle while
+// function repete(str, num) {
+
+//   var final = '';
+
+//   while(num > 0){
+//     final += str;
+//     num--;
+//   }
+  
+//   return final;
+// }
+// console.log(repete('abc', 4));
+
+
+// Avec recursion
+// function repete(str, num) {
+
+//   if(num < 1) {
+//     return "";
+//   }
+
+//   else {
+//     return str + repete(str, num - 1);
+//   }
+//   // "abc" + "abc" + "abc" + "abc" + ""
+// }
+// console.log(repete('abc', 4));
