@@ -3,7 +3,6 @@ const result = /[a-zA-Z !]/gm;
 return str.match(result).join('');
 }
 
-
 console.log(regexTime('I4l est te-mp///s de %sav/oir u845til85iser 6le re%gex !'));
 
 
