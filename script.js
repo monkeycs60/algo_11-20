@@ -1,48 +1,46 @@
-function difTab(arr1, arr2) {
-    let tabResult = [];
-for (let index = 0; index < arr1.length; index++) {
-    // console.log(arr1.indexOf(arr2[index]));
-    console.log(arr2.indexOf(arr1[index]));
-    if (arr1.indexOf(arr2[index]) == -1) {
-        tabResult.push(arr2[index]);
-       
-        
+function trouverLaPersonne(data, source) {
+    let varNom = [];
+    let resultat = [];
+for (let index = 0; index < data.length; index++) {
+    
+    if ((source.hasOwnProperty("nom") === data[index].hasOwnProperty("nom"))) {
+       varNom.push(data[index]);
     }
-    if (arr2.indexOf(arr1[index]) == -1) {
-        tabResult.push(arr1[index]);
-       
-       
-    }  
-    }
-    const lastResult = tabResult.filter(el => el !== undefined)
-    return lastResult;
 }
 
+for (let j = 0; j < varNom.length; j++) {
+    if ( varNom[j].nom == source.nom) {
+        resultat.push(varNom[j])
+    }
     
+}
+return resultat;
 
+}
 
+console.log(
+  trouverLaPersonne(
+  [
+    { prenom: "Tom", nom: "Durand" },
+    { prenom: "Juliette", nom: "Garcia" },
+    { prenom: "Jean", nom: "Lafite" },
+    { prenom: "Lucien", nom: "Lafite" },
+    { prenom: "Lucien", abc: "Lafite" }
+  ], 
+    { nom: "Lafite" }
+  ));
 
-
-
-console.log(difTab([1, 2, 3, 5, 7, 6, 4, 9], [1, 2, 6, 7, 8, 3, 4, 5]));
-
-// console.log(difTab([1, 2], [1, 3, 2]));
-
-// const thirdTab = arr1.concat(arr2);
-// console.log(thirdTab);
 
 // ----------------- ÉNONCÉ -----------------
-//             (9) [1, 2, 3, 5, 1, 2, 3, 4, 5]
 
-// Vous devez créer un algorithme qui retourne les différences entre deux tableaux.
-// Il prends deux tableaux en arguments et retourne un tableau contenant les différences.
+// On passe en entrée un tableau d'objet et un objet, vous devez afficher, dans un
+// tableau, les objets qui ont la même propriété("nom") ET la même valeur
+// associée à cette propriété.
+// l'exemple ici devrai retourner : [{prenom: "Jean", nom: "Lafite"}, {prenom: "Lucien", nom: "Lafite"}];
 
 // ----------------- CONSEILS -----------------
 
-// Il est possible de créer une fonction dans une fonction.
-// indexOf()
-// push();
-//
-// Ou alors...
-// concat();
-// filter();
+// Object.keys(obj) -> renvoie un tableau avec les propriétés d'un objet.
+// filter(), filtre et retourne un tableau(false, undefined, null sont filtrés d'un tableau).
+// obj.hasOwnProperty() -> vérifie si un objet possede une propriete, retourne
+// true ou false;
